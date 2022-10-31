@@ -1,0 +1,97 @@
+{
+  "profile-prepare": {
+    "employment": [
+      {
+        "name": "На себя",
+        "value": "self_employed"
+      },
+      {
+        "name": "По найму",
+        "value": "employed"
+      },
+      {
+        "name": "Без работы",
+        "value": "unemployed"
+      }
+    ],
+    "citezenship": [
+      {
+        "name": "РФ",
+        "country_code": "RU"
+      }
+    ],
+    "country": [
+      {
+        "name": "Россия",
+        "code": "RU"
+      },
+      {
+        "name": "Казахстан",
+        "code": "KZ"
+      }
+    ],
+    "cities": {
+      "RU": [
+        {
+          "name": "Санкт-Петербург",
+          "code": "SPB"
+        },
+        {
+          "name": "Москва",
+          "code": "MSK"
+        }
+      ],
+      "KZ": [
+        {
+          "city_name": "Алматы",
+          "city_code": "AMT",
+          "city_id": 3
+        }
+      ]
+    }
+  },
+  "projects": [
+    {
+      "name": "Разработка веб приложения",
+      "description": "test",
+      "link": "test",
+      "presentation": "test",
+      "creator_id": 1
+    },
+    {
+      "name": "Уборка в саду",
+      "description": "test",
+      "link": "test",
+      "presentation": "test",
+      "creator_id": 1
+    },
+    {
+      "name": "Новая нейросеть",
+      "description": "test",
+      "link": "test",
+      "presentation": "test",
+      "creator_id": 2
+    },
+    {
+      "name": "test",
+      "description": "test",
+      "link": "test",
+      "presentation": "test",
+      "creator_id": 2
+    },
+    {
+      "name": "test",
+      "description": "test",
+      "link": "test",
+      "presentation": "test",
+      "creator_id": 3
+    },
+    {
+      "name": "test",
+      "description": "test",
+      "link": "test",
+      "presentation": "test",
+      "creator_id": 3
+    }
+  ]
+}
