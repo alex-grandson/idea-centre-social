@@ -1,7 +1,12 @@
 import { FC } from 'react'
+import ProjectCard from '../../components/project/ProjectCard'
 
 const ProjectPage: FC = () => {
-  return <div>ProjectPage</div>
+  return (
+    <div>
+      <ProjectCard />
+    </div>
+  )
 }
 
 export default ProjectPage
