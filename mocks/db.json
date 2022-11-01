@@ -48,7 +48,39 @@
           "city_id": 3
         }
       ]
-    }
+    },
+    "skills": [
+      {
+        "name": "Программист",
+        "value": "programmer",
+        "category": "it"
+      },
+      {
+        "name": "Инженер БД",
+        "value": "db-engineer",
+        "category": "it"
+      },
+      {
+        "name": "Инженер-ядерщик",
+        "value": "nuclear-engineer",
+        "category": "engineering"
+      },
+      {
+        "name": "Инженер-энергетик",
+        "value": "engineer",
+        "category": "engineering"
+      },
+      {
+        "name": "Программист",
+        "value": "programmer",
+        "category": "it"
+      },
+      {
+        "name": "Инженер",
+        "value": "engineer",
+        "category": "engineering"
+      }
+    ]
   },
   "projects": [
     {
@@ -92,6 +124,44 @@
       "link": "test",
       "presentation": "test",
       "creator_id": 3
+    }
+  ],
+  "profiles": [
+    {
+      "uuid": "",
+      "email": "",
+      "firstname": "",
+      "lastname": "",
+      "patronymic": "",
+      "country_code": "",
+      "role": ""
+    },
+    {
+      "uuid": "",
+      "email": "",
+      "firstname": "",
+      "lastname": "",
+      "patronymic": "",
+      "country_code": "",
+      "role": ""
+    },
+    {
+      "uuid": "",
+      "email": "",
+      "firstname": "",
+      "lastname": "",
+      "patronymic": "",
+      "country_code": "",
+      "role": ""
+    },
+    {
+      "uuid": "",
+      "email": "",
+      "firstname": "",
+      "lastname": "",
+      "patronymic": "",
+      "country_code": "",
+      "role": ""
     }
   ]
 }
