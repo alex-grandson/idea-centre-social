@@ -1,11 +1,18 @@
 import { FC } from 'react'
+import ContentContainer from '../../components/global/ContentContainer'
 import ProjectCard from '../../components/project/ProjectCard'
 
 const ProjectPage: FC = () => {
   return (
-    <div>
+    <ContentContainer>
       <ProjectCard />
-    </div>
+      <ProjectCard />
+      <ProjectCard />
+      <ProjectCard />
+      <ProjectCard />
+      <ProjectCard />
+      <ProjectCard />
+    </ContentContainer>
   )
 }
 
