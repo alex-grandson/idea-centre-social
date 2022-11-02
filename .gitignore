@@ -40,3 +40,5 @@ yarn-error.log*
 .vscode/
 .idea/
 .fleet/
+
+yarn.lock
