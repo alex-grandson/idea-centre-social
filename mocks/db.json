@@ -90,10 +90,18 @@
       "image": "https://rr-grup.ru/upload/iblock/6f0/6f0bb79aef7231872fc433acaee5e85b.jpg",
       "presentation_link": "https://vk.com/x1kk4",
       "creator": {
+        "uuid": "1",
         "firstname": "Greg",
         "lastname": "Penisov",
         "image": "https://avatars.mds.yandex.net/i?id=ae32873ae4fe322ed42c91f20c423fd46b090931-4033630-images-thumbs&n=13"
-      }
+      },
+      "date": "01.02.2022",
+      "slots": [
+        { "category": "Бебранюх" },
+        { "category": "Механик" },
+        { "category": "Водитель" },
+        { "category": "Таксист" }
+      ]
     },
     {
       "uuid": "poiupoi",
@@ -102,10 +110,18 @@
       "image": "https://phonoteka.org/uploads/posts/2021-06/1624459402_10-phonoteka_org-p-stroika-oboi-krasivo-11.jpg",
       "presentation_link": "https://vk.com/x1kk4",
       "creator": {
+        "uuid": "2",
         "firstname": "Leha",
         "lastname": "Vnukov",
         "image": "https://funik.ru/wp-content/uploads/2018/10/04-14.jpg"
-      }
+      },
+      "date": "02.03.2022",
+      "slots": [
+        { "category": "Фронт" },
+        { "category": "Рэпер" },
+        { "category": "Чирон беба" },
+        { "category": "Драйвер" }
+      ]
     },
     {
       "uuid": "qwerqwer",
@@ -114,10 +130,18 @@
       "image": "https://phonoteka.org/uploads/posts/2021-06/1624459402_10-phonoteka_org-p-stroika-oboi-krasivo-11.jpg",
       "presentation_link": "https://vk.com/x1kk4",
       "creator": {
+        "uuid": "3",
         "firstname": "jekichan",
         "lastname": "Tankov",
         "image": "https://fanibani.ru/images/wp-content/uploads/2018/11/koty-22.jpg"
-      }
+      },
+      "date": "03.04.2022",
+      "slots": [
+        { "category": "Абобус" },
+        { "category": "Котик" },
+        { "category": "Плотник" },
+        { "category": "Дворник" }
+      ]
     },
     {
       "uuid": "asdffdgh",
@@ -126,10 +150,18 @@
       "image": "https://phonoteka.org/uploads/posts/2021-06/1624459441_55-phonoteka_org-p-stroika-oboi-krasivo-61.jpg",
       "presentation_link": "https://vk.com/x1kk4",
       "creator": {
+        "uuid": "4",
         "firstname": "IPAD",
         "lastname": "Pahan",
         "image": "https://fikiwiki.com/uploads/posts/2022-02/1644991786_3-fikiwiki-com-p-prikolnie-kartinki-pro-kotov-3.jpg"
-      }
+      },
+      "date": "04.05.2022",
+      "slots": [
+        { "category": "Стив хуйс" },
+        { "category": "Космонавт" },
+        { "category": "Леха внук" },
+        { "category": "Клоун" }
+      ]
     },
     {
       "uuid": "123asdf",
@@ -138,10 +170,18 @@
       "image": "https://venaavstrijafoto.ru/wp-content/uploads/2022/02/7834877348783467693834.jpg",
       "presentation_link": "https://vk.com/x1kk4",
       "creator": {
+        "uuid": "5",
         "firstname": "Romich",
         "lastname": "Greek",
         "image": "https://fikiwiki.com/uploads/posts/2022-02/1644991762_24-fikiwiki-com-p-prikolnie-kartinki-pro-kotov-25.jpg"
-      }
+      },
+      "date": "05.06.2022",
+      "slots": [
+        { "category": "Грузчик" },
+        { "category": "Механик" },
+        { "category": "Водитель" },
+        { "category": "Продавец" }
+      ]
     },
     {
       "uuid": "1987asdf",
@@ -150,10 +190,18 @@
       "image": "https://avatars.mds.yandex.net/i?id=eb65002f1cce6b0ab81ffe3fa132f0a8641c50fb-4820929-images-thumbs&n=13",
       "presentation_link": "https://vk.com/x1kk4",
       "creator": {
+        "uuid": "6",
         "firstname": "Elon",
         "lastname": "Musk",
         "image": "https://krasivosti.pro/uploads/posts/2022-01/1641308291_11-krasivosti-pro-p-prikolnie-koti-krasivo-foto-11.jpg"
-      }
+      },
+      "date": "06.07.2022",
+      "slots": [
+        { "category": "Твиттергай" },
+        { "category": "Ивангай" },
+        { "category": "Бебра" },
+        { "category": "Пилот" }
+      ]
     }
   ],
   "profiles": [
