@@ -25,7 +25,7 @@ const LoginForm = () => {
       //   .catch((err: AxiosError) => {
       //     setIsError(true)
       //     console.log(err)
-      //   })
+      //   })e2 (Inmplement login and register forms)
     },
     validationSchema: loginValidation,
   })

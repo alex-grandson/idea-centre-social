@@ -26,7 +26,7 @@ const RegisterForm = () => {
       //   .catch((err: AxiosError) => {
       //     setIsError(true)
       //     console.log(err)
-      //   })
+      //   })13e2 (Inmplement login and register forms)
     },
     validationSchema: registerValidation,
   })

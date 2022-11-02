@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { LoginRequest } from '../types/auth/Login'
 import { RegisterRequest } from '../types/auth/Register'
-
 const API_HOST = process.env.API_HOST || 'http://localhost:9000/api/v1/'
 
 export const api = axios.create({
@@ -24,6 +23,4 @@ export default class AuthService {
   static logout = () => {
     return api.get('/logout')
   }
-
-  // static createProfile = (profile: Profile) => {}
 }
