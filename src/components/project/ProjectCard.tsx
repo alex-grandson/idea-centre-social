@@ -8,6 +8,11 @@ import Avatar from '@mui/material/Avatar'
 import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
 import ProjectModalContent from './ProjectContent'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemText from '@mui/material/ListItemText'
+import CommentIcon from '@mui/icons-material/Comment'
+import IconButton from '@mui/material/IconButton'
 import { Project } from '../../types/Project'
 
 interface ProjectCardProps {
@@ -63,7 +68,16 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
                 {`${project.creator.firstname} ${project.creator.lastname}`}
               </Typography>
             </Box>
-            <Typography variant='body2' sx={{ mt: '10px' }}>
+            <List
+              sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+            >
+              {project.slots.map((value) => (
+                <ListItem disableGutters>
+                  <ListItemText primary={`${value.category}`} />
+                </ListItem>
+              ))}
+            </List>
+            {/* <Typography variant='body2' sx={{ mt: '10px' }}>
               Требуется:
               <br />
               - Дворник
@@ -72,7 +86,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
               <br />
               - Фронтендер
               <br />- Танкист
-            </Typography>
+            </Typography> */}
           </CardContent>
         </CardActionArea>
       </Card>
@@ -82,7 +96,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
         aria-labelledby='modal-modal-title'
         aria-describedby='modal-modal-description'
       >
-        <ProjectModalContent />
+        <ProjectModalContent project={project} />
       </Modal>
     </Box>
   )
