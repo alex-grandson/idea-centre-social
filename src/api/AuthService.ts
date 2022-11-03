@@ -1,8 +1,6 @@
-import { PreparedInfo, Profile } from '../types/Profile'
-
 import axios from 'axios'
-import { LoginRequest } from '../types/auth/LoginRequest'
-import { RegisterRequest } from '../types/auth/RegisterRequest'
+import { LoginRequest } from '../types/auth/Login'
+import { RegisterRequest } from '../types/auth/Register'
 
 const API_HOST = process.env.API_HOST || 'http://localhost:9000/api/v1/'
 
@@ -22,4 +20,10 @@ export default class AuthService {
   static register = (data: RegisterRequest) => {
     return api.post('/profile-prepare', data)
   }
+
+  static logout = () => {
+    return api.get('/logout')
+  }
+
+  // static createProfile = (profile: Profile) => {}
 }

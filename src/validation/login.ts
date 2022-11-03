@@ -1,7 +1,5 @@
 import * as yup from 'yup'
 
-import { loginRegex } from '../const/regexes'
-
 export const loginValidation = yup.object({
   email: yup
     .string()
