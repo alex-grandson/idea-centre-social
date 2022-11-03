@@ -1,4 +1,3 @@
-import { AccountTree, Add, Logout, Person } from '@mui/icons-material'
 import {
   Avatar,
   Box,
@@ -10,25 +9,10 @@ import {
   Typography,
 } from '@mui/material'
 
+import { avatarDropdown } from '../../constants/AvatarDropdown'
+import { Logout } from '@mui/icons-material'
 import { useState } from 'react'
 
-const settings = [
-  {
-    title: 'Профиль',
-    href: '/profile',
-    icon: <Person />,
-  },
-  {
-    title: 'Начать проект',
-    href: '/projects/add',
-    icon: <Add />,
-  },
-  {
-    title: 'Мои проекты',
-    href: '/projects/my',
-    icon: <AccountTree />,
-  },
-]
 const ProfileAvatar = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null)
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null)
@@ -61,7 +45,7 @@ const ProfileAvatar = () => {
         open={Boolean(anchorElUser)}
         onClose={handleCloseUserMenu}
       >
-        {settings.map((setting, idx) => (
+        {avatarDropdown.map((setting, idx) => (
           <MenuItem key={idx} onClick={handleCloseUserMenu}>
             <Box
               display={'flex'}

@@ -3,7 +3,7 @@ import { Box, Button, TextField } from '@mui/material'
 import { useEffect, useState } from 'react'
 
 import AuthService from '../../api/AuthService'
-import { LoginRequest } from '../../types/auth/LoginRequest'
+import { LoginRequest } from '../../types/auth/Login'
 import { loginValidation } from '../../validation/login'
 import { useFormik } from 'formik'
 
@@ -15,16 +15,17 @@ const LoginForm = () => {
       password: '',
     } as LoginRequest,
     onSubmit: (values) => {
-      AuthService.login(values)
-        .then((response: AxiosResponse) => {
-          if (response.status == 200) {
-            // router.push('/dashboard/users')
-          }
-        })
-        .catch((err: AxiosError) => {
-          setIsError(true)
-          console.log(err)
-        })
+      console.debug(values)
+      // AuthService.login(values)
+      //   .then((response: AxiosResponse) => {
+      //     if (response.status == 200) {
+      //       // router.push('/dashboard/users')
+      //     }
+      //   })
+      //   .catch((err: AxiosError) => {
+      //     setIsError(true)
+      //     console.log(err)
+      //   })
     },
     validationSchema: loginValidation,
   })

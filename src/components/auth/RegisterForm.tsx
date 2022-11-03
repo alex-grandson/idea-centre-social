@@ -3,7 +3,7 @@ import { Box, Button, TextField } from '@mui/material'
 import { useEffect, useState } from 'react'
 
 import AuthService from '../../api/AuthService'
-import { RegisterRequest } from '../../types/auth/RegisterRequest'
+import { RegisterRequest } from '../../types/auth/Register'
 import { registerValidation } from '../../validation/register'
 import { useFormik } from 'formik'
 
@@ -13,19 +13,20 @@ const RegisterForm = () => {
     initialValues: {
       email: '',
       password: '',
-    } as RegisterRequest,
+      passwordConfirmation: '',
+    } as RegisterRequest & { passwordConfirmation: string },
     onSubmit: (values) => {
       console.debug(values)
-      AuthService.register(values)
-        .then((response: AxiosResponse) => {
-          if (response.status == 200) {
-            // router.push('/projects')
-          }
-        })
-        .catch((err: AxiosError) => {
-          setIsError(true)
-          console.log(err)
-        })
+      // AuthService.register(values)
+      //   .then((response: AxiosResponse) => {
+      //     if (response.status == 200) {
+      //       // router.push('/projects')
+      //     }
+      //   })
+      //   .catch((err: AxiosError) => {
+      //     setIsError(true)
+      //     console.log(err)
+      //   })
     },
     validationSchema: registerValidation,
   })
