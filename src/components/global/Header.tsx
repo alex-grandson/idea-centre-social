@@ -1,27 +1,27 @@
 import * as React from 'react'
-import AppBar from '@mui/material/AppBar'
-import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
-import CssBaseline from '@mui/material/CssBaseline'
-import useScrollTrigger from '@mui/material/useScrollTrigger'
-import Box from '@mui/material/Box'
-import Container from '@mui/material/Container'
-import Fab from '@mui/material/Fab'
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
-import Fade from '@mui/material/Fade'
-import AdbIcon from '@mui/icons-material/Adb'
-import IconButton from '@mui/material/IconButton'
-import Menu from '@mui/material/Menu'
-import MenuIcon from '@mui/icons-material/Menu'
-import Avatar from '@mui/material/Avatar'
-import Button from '@mui/material/Button'
-import Tooltip from '@mui/material/Tooltip'
-import MenuItem from '@mui/material/MenuItem'
-import Link from 'next/link'
-import NavLink from '../NavLink'
-import { headerMenuElements } from '../../constants/HeaderMenuElements'
 
-const settings = ['Профиль', 'Dashboard', 'Выход']
+import {
+  AppBar,
+  Box,
+  Container,
+  CssBaseline,
+  Fab,
+  Fade,
+  Menu,
+  MenuItem,
+  Toolbar,
+  useScrollTrigger,
+} from '@mui/material'
+
+import AdbIcon from '@mui/icons-material/Adb'
+import { headerMenuElements } from '../../constants/HeaderMenuElements'
+import IconButton from '@mui/material/IconButton'
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
+import Link from 'next/link'
+import MenuIcon from '@mui/icons-material/Menu'
+import NavLink from '../NavLink'
+import ProfileAvatar from './ProfileAvatar'
+import Typography from '@mui/material/Typography'
 
 interface Props {
   /**
@@ -77,16 +77,9 @@ export default function Header(props: Props) {
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget)
   }
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget)
-  }
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null)
-  }
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null)
   }
 
   return (
@@ -233,35 +226,7 @@ export default function Header(props: Props) {
             </Box>
 
             {/* Global */}
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title='Open settings'>
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt='Remy Sharp' src='/static/images/avatar/2.jpg' />
-                </IconButton>
-              </Tooltip>
-              <Menu
-                sx={{ mt: '45px' }}
-                id='menu-appbar'
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign='center'>{setting}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
+            <ProfileAvatar />
           </Toolbar>
         </Container>
       </AppBar>
