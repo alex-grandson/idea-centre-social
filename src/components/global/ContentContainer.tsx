@@ -9,7 +9,7 @@ interface ContentContainerProps {
 const ContentContainer: FC<ContentContainerProps> = ({ children }) => {
   return (
     <Box sx={{ width: '70%', m: '0 auto' }}>
-      <Grid container direction='row'>
+      <Grid container spacing={1} columns={{ xs: 6, md: 12 }}>
         {children}
       </Grid>
     </Box>

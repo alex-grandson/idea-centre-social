@@ -3,29 +3,28 @@ import ContentContainer from '../../components/global/ContentContainer'
 import ProjectCard from '../../components/project/ProjectCard'
 import ProjectService from '../../api/ProjectService'
 import { Project } from '../../types/Project'
+import Grid from '@mui/material/Grid'
+import useProjectsFetch from '../../hooks/useProjectsFetch'
+import useInfiniteScroll from '../../hooks/useInfiniteScroll'
 
 const ProjectPage: FC = () => {
-  const [pageData, setPageData] = useState<Project[]>([])
-  const [isLoading, setIsLoading] = useState(false)
-
-  useEffect(() => {
-    setIsLoading(true)
-    ProjectService.getAllProjects()
-      .then((response) => {
-        setPageData(response.data)
-      })
-      .catch()
-      .finally(() => setIsLoading(false))
-  }, [])
+  const { loadMoreRef, page } = useInfiniteScroll()
+  const { loading, projects } = useProjectsFetch(page)
+  // const [isLoading, setIsLoading] = useState(false)
 
   return (
-    <ContentContainer>
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : (
-        pageData.map((item) => <ProjectCard project={item} />)
-      )}
-    </ContentContainer>
+    <>
+      <ContentContainer>
+        {projects.map((item, index) => (
+          <Grid item xs={6}>
+            <ProjectCard project={item} key={index} />
+          </Grid>
+        ))}
+      </ContentContainer>
+      <div style={{ position: 'relative', bottom: '500px' }} ref={loadMoreRef}>
+        YAKOR'
+      </div>
+    </>
   )
 }
 

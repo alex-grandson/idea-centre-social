@@ -11,26 +11,14 @@ import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
 import CommentIcon from '@mui/icons-material/Comment'
 import IconButton from '@mui/material/IconButton'
+import { Divider } from '@mui/material'
 import { Project } from '../../types/Project'
-
-const style = {
-  display: 'inline-block',
-  position: 'absolute' as 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: '610px',
-  height: '190',
-  borderRadius: '25px',
-  boxShadow: 3,
-  p: '0 0 32px 0',
-}
 
 interface ProjectCardProps {
   project: Project
 }
 
-const ProjectContent: FC<ProjectCardProps> = ({ project }) => {
+const ProjectModalContent: FC<ProjectCardProps> = ({ project }) => {
   return (
     <Card
       sx={{
@@ -39,7 +27,8 @@ const ProjectContent: FC<ProjectCardProps> = ({ project }) => {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        maxWidth: 610,
+        width: '70%',
+        maxHeight: '150%',
         borderRadius: '25px',
         margin: '0 auto',
         boxShadow: 3,
@@ -47,16 +36,13 @@ const ProjectContent: FC<ProjectCardProps> = ({ project }) => {
     >
       <CardMedia
         component='img'
-        height='350px'
+        height='250px'
         image={project.image}
         alt={project.name}
       />
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color='text.secondary' gutterBottom>
           {project.date}
-        </Typography>
-        <Typography variant='h5' component='div'>
-          {project.name}
         </Typography>
         <Box
           sx={{
@@ -71,21 +57,32 @@ const ProjectContent: FC<ProjectCardProps> = ({ project }) => {
             sx={{ alignSelf: 'center' }}
           >{`${project.creator.firstname} ${project.creator.lastname}`}</Typography>
         </Box>
-        {project.slots.map((value) => (
-          <ListItem
-            disableGutters
-            secondaryAction={
-              <IconButton aria-label='comment'>
-                <CommentIcon />
-              </IconButton>
-            }
-          >
-            <ListItemText primary={`${value.category}`} />
-          </ListItem>
-        ))}
+        <Typography variant='h5' component='div' sx={{ textAlign: 'center' }}>
+          {project.name}
+        </Typography>
+        <Divider variant='middle' sx={{ mt: '1%' }} />
+        <Box sx={{ display: 'flex', gap: '1%' }}>
+          <Box sx={{ width: '80%', mt: '4px' }}>{project.description}</Box>
+          <Divider orientation='vertical' flexItem />
+          <Box sx={{ width: '20', overflow: 'auto' }}>
+            {project.slots.map((value) => (
+              <ListItem
+                sx={{ pt: 0, overflow: 'auto' }}
+                disableGutters
+                secondaryAction={
+                  <IconButton aria-label='comment'>
+                    <CommentIcon />
+                  </IconButton>
+                }
+              >
+                <ListItemText primary={`${value.category}`} />
+              </ListItem>
+            ))}
+          </Box>
+        </Box>
       </CardContent>
     </Card>
   )
 }
 
-export default ProjectContent
+export default ProjectModalContent
