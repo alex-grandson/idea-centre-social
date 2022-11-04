@@ -1,7 +1,15 @@
-import { Box, IconButton, Menu, MenuItem, Typography } from '@mui/material'
+import {
+  Box,
+  colors,
+  IconButton,
+  Menu,
+  MenuItem,
+  Typography,
+} from '@mui/material'
 
 import { headerMenuElements } from '../../constants/HeaderMenuElements'
 import Link from 'next/link'
+// import { Link } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import NavLink from '../NavLink'
 import { useState } from 'react'
@@ -83,8 +91,9 @@ const HeaderNavContent = () => {
               <MenuItem
                 key={headerMenuElement.title}
                 onClick={handleCloseNavMenu}
+                style={{ textDecoration: 'none', color: 'black' }}
               >
-                <Typography textAlign='center'>
+                <Typography textAlign='center' sx={{ textAlign: 'center' }}>
                   {headerMenuElement.title}
                 </Typography>
               </MenuItem>

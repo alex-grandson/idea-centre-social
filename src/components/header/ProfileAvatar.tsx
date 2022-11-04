@@ -9,6 +9,8 @@ import {
   Typography,
 } from '@mui/material'
 
+import Link from 'next/link'
+
 import { avatarDropdown } from '../../constants/AvatarDropdown'
 import { Logout } from '@mui/icons-material'
 import { useState } from 'react'
@@ -26,7 +28,10 @@ const ProfileAvatar = () => {
     <Box sx={{ flexGrow: 0 }}>
       <Tooltip title='Профиль'>
         <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-          <Avatar alt='Remy Sharp' src='/static/images/avatar/2.jpg' />
+          <Avatar
+            alt='Remy Sharp'
+            src='https://sun9-70.userapi.com/impg/M9vGoki7hgqhRZQ6XRwatvzqAlrFA21LoWtrdg/nMF6Hq7rFQ4.jpg?size=604x604&quality=96&sign=fd8f66171046300706ab75ea3ea4b699&type=album'
+          />
         </IconButton>
       </Tooltip>
       <Menu
@@ -46,23 +51,29 @@ const ProfileAvatar = () => {
         onClose={handleCloseUserMenu}
       >
         {avatarDropdown.map((setting, idx) => (
-          <MenuItem key={idx} onClick={handleCloseUserMenu}>
-            <Box
-              display={'flex'}
-              alignItems={'center'}
-              textAlign='center'
-              py={1}
+          <Link href={setting.href} style={{ textDecoration: 'none' }}>
+            <MenuItem
+              key={idx}
+              onClick={handleCloseUserMenu}
+              style={{ color: 'black' }}
             >
-              <Icon
-                sx={{
-                  mr: 1.2,
-                }}
+              <Box
+                display={'flex'}
+                alignItems={'center'}
+                textAlign='center'
+                py={1}
               >
-                {setting.icon}
-              </Icon>
-              <Typography pt={0.4}>{setting.title}</Typography>
-            </Box>
-          </MenuItem>
+                <Icon
+                  sx={{
+                    mr: 1.2,
+                  }}
+                >
+                  {setting.icon}
+                </Icon>
+                <Typography pt={0.4}>{setting.title}</Typography>
+              </Box>
+            </MenuItem>
+          </Link>
         ))}
         <MenuItem onClick={handleCloseUserMenu}>
           <Box
