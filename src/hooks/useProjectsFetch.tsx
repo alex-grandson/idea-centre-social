@@ -3,18 +3,20 @@ import { useState, useEffect, useCallback } from 'react'
 import { Project } from '../types/Project'
 import ProjectService from '../api/ProjectService'
 
-function useFetch(page: number) {
+function useProjectsFetch(page: number) {
   const [loading, setLoading] = useState<boolean>(false)
   const [projects, setProjects] = useState<Project[]>([])
   const [end, setEnd] = useState<boolean>(false)
 
   const getProjects = useCallback(async () => {
     try {
-      if (end === false) {
+      if (!end) {
         setLoading(true)
-        const response = await ProjectService.getAllProjects()
+        const response = await ProjectService.getPageOfProjects(page)
         const data: any = response.data
-        data ? () => setEnd(false) : () => setEnd(true)
+        if (!data.length) {
+          setEnd(true)
+        }
         setProjects((prev) => [...prev, ...data])
         setLoading(false)
       }
@@ -30,4 +32,4 @@ function useFetch(page: number) {
   return { loading, projects }
 }
 
-export default useFetch
+export default useProjectsFetch

@@ -4,28 +4,26 @@ import ProjectCard from '../../components/project/ProjectCard'
 import ProjectService from '../../api/ProjectService'
 import { Project } from '../../types/Project'
 import Grid from '@mui/material/Grid'
-import useFetch from '../../hooks/useFetch'
+import useProjectsFetch from '../../hooks/useProjectsFetch'
 import useInfiniteScroll from '../../hooks/useInfiniteScroll'
 
 const ProjectPage: FC = () => {
-  // const [pageData, setPageData] = useState<Project[]>([])
   const { loadMoreRef, page } = useInfiniteScroll()
-  const { loading, projects } = useFetch(page)
+  const { loading, projects } = useProjectsFetch(page)
   // const [isLoading, setIsLoading] = useState(false)
 
   return (
     <>
       <ContentContainer>
-        {projects.map((item) => (
+        {projects.map((item, index) => (
           <Grid item xs={6}>
-            <ProjectCard project={item} />
+            <ProjectCard project={item} key={index} />
           </Grid>
         ))}
       </ContentContainer>
-      <div
-        style={{ position: 'relative', bottom: '500px' }}
-        ref={loadMoreRef}
-      ></div>
+      <div style={{ position: 'relative', bottom: '500px' }} ref={loadMoreRef}>
+        YAKOR'
+      </div>
     </>
   )
 }

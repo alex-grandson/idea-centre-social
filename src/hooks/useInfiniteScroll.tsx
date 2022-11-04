@@ -8,6 +8,7 @@ function useInfiniteScroll() {
     const [target] = entries
     if (target.isIntersecting) {
       setPage((prev) => prev + 1)
+      // console.log(page)
     }
   }, [])
 
@@ -21,6 +22,8 @@ function useInfiniteScroll() {
     const observer = new IntersectionObserver(handleObserver, option)
 
     if (loadMoreRef.current) observer.observe(loadMoreRef.current)
+    // console.log(handleObserver)
+    // console.log('useEffect')
   }, [handleObserver])
 
   return { loadMoreRef, page }
