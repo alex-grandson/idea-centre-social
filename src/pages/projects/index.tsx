@@ -4,33 +4,29 @@ import ProjectCard from '../../components/project/ProjectCard'
 import ProjectService from '../../api/ProjectService'
 import { Project } from '../../types/Project'
 import Grid from '@mui/material/Grid'
+import useFetch from '../../hooks/useFetch'
+import useInfiniteScroll from '../../hooks/useInfiniteScroll'
 
 const ProjectPage: FC = () => {
-  const [pageData, setPageData] = useState<Project[]>([])
-  const [isLoading, setIsLoading] = useState(false)
-
-  useEffect(() => {
-    setIsLoading(true)
-    ProjectService.getAllProjects()
-      .then((response) => {
-        setPageData(response.data)
-      })
-      .catch()
-      .finally(() => setIsLoading(false))
-  }, [])
+  // const [pageData, setPageData] = useState<Project[]>([])
+  const { loadMoreRef, page } = useInfiniteScroll()
+  const { loading, projects } = useFetch(page)
+  // const [isLoading, setIsLoading] = useState(false)
 
   return (
-    <ContentContainer>
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : (
-        pageData.map((item) => (
+    <>
+      <ContentContainer>
+        {projects.map((item) => (
           <Grid item xs={6}>
             <ProjectCard project={item} />
           </Grid>
-        ))
-      )}
-    </ContentContainer>
+        ))}
+      </ContentContainer>
+      <div
+        style={{ position: 'relative', bottom: '500px' }}
+        ref={loadMoreRef}
+      ></div>
+    </>
   )
 }
 
