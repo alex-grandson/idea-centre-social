@@ -15,4 +15,7 @@ export default class ProjectService {
   static getAllProjects = () => {
     return api.get<Project[]>(`projects`)
   }
+  static getPageOfProjects = (page: number) => {
+    return api.get<Project[]>(`projects?_limit=4&_page=${page}`)
+  }
 }

@@ -7,7 +7,7 @@ import { CardActionArea } from '@mui/material'
 import Avatar from '@mui/material/Avatar'
 import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
-import ProjectModalContent from './ProjectContent'
+import ProjectModalContent from './ProjectModalContent'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
@@ -25,19 +25,20 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
   const handleClose = () => setOpen(false)
 
   return (
-    <Box>
+    <Box sx={{ height: '100%' }}>
       <Card
         sx={{
-          maxWidth: 300,
+          width: '100%',
+          height: '100%',
           borderRadius: '25px',
           margin: '0 auto',
           boxShadow: 3,
         }}
       >
-        <CardActionArea onClick={() => handleOpen()}>
+        <CardActionArea sx={{ height: '100%' }} onClick={() => handleOpen()}>
           <CardMedia
+            sx={{ height: '200px' }}
             component='img'
-            height=''
             image={project.image}
             alt={project.name}
           />
@@ -77,16 +78,6 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
                 </ListItem>
               ))}
             </List>
-            {/* <Typography variant='body2' sx={{ mt: '10px' }}>
-              Требуется:
-              <br />
-              - Дворник
-              <br />
-              - Специалист по лазерам
-              <br />
-              - Фронтендер
-              <br />- Танкист
-            </Typography> */}
           </CardContent>
         </CardActionArea>
       </Card>
@@ -95,6 +86,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
         onClose={handleClose}
         aria-labelledby='modal-modal-title'
         aria-describedby='modal-modal-description'
+        sx={{ overflow: 'scroll' }}
       >
         <ProjectModalContent project={project} />
       </Modal>
