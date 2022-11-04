@@ -3,6 +3,7 @@ import ContentContainer from '../../components/global/ContentContainer'
 import ProjectCard from '../../components/project/ProjectCard'
 import ProjectService from '../../api/ProjectService'
 import { Project } from '../../types/Project'
+import Grid from '@mui/material/Grid'
 
 const ProjectPage: FC = () => {
   const [pageData, setPageData] = useState<Project[]>([])
@@ -23,7 +24,11 @@ const ProjectPage: FC = () => {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        pageData.map((item) => <ProjectCard project={item} />)
+        pageData.map((item) => (
+          <Grid item xs={6}>
+            <ProjectCard project={item} />
+          </Grid>
+        ))
       )}
     </ContentContainer>
   )
