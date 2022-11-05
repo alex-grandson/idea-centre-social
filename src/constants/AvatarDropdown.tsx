@@ -3,7 +3,7 @@ import { AccountTree, Add, Person } from '@mui/icons-material'
 export const avatarDropdown = [
   {
     title: 'Профиль',
-    href: '/profile',
+    href: '/me',
     icon: <Person />,
   },
   {

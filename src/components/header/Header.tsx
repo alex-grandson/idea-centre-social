@@ -66,7 +66,7 @@ const Header = (props: Props) => {
         <Container maxWidth='xl'>
           <Toolbar disableGutters>
             <HeaderNavContent />
-            {authStore.user != undefined ? (
+            {authStore.user == undefined ? (
               <ProfileAvatar />
             ) : (
               <ButtonGroup>

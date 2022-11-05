@@ -1,22 +1,41 @@
+type Company = {
+  name: string
+  inn: string
+}
+
+type Education = {
+  university: string
+  eduspeciality: string
+  graduationYear: number
+}
+
 export type Profile = {
+  UUID: string
   email: string
   firstname: string
   lastname: string
-  image: string
-  patronymic?: string //?
-  country_uuid: string
-  city_uuid: string
-  citizenship_uuid: string
-  gender: string
-  contact: string
-  education: string
-  employment_uuid: string
-  experience: number
-  skill: string
+  experience?: number
   achievement: string
-  team: string
-  team_role: string
-  patent: string
-  company_inn: number
-  role?: string // ?
+  patronymic?: string
+  country?: string
+  citezenship?: string
+  city?: string
+  gender?: string
+  phone?: string
+  employment?: string
+  imageURL?: string
+  team?: string
+  role?: string
+  skill?: string
+  company?: Company
+  education?: Education
 }
+
+//Образование
+//Опыт (число)
+//Профессия
+//Навыки
+//Достижения
+//Компания (+ роль)
+//Изобретения
+//ИНН компании
