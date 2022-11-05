@@ -1,5 +1,5 @@
 export type User = {
-  uuid: string
+  UUID: string
   firstName: string
   lastName: string
   patronymic?: string

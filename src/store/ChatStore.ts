@@ -2,7 +2,7 @@ import { Chat } from '../types/chat/Chat'
 import { makeAutoObservable } from 'mobx'
 
 export default class ChatStore {
-  chat = {} as Chat
+  chatUUID: string | undefined = undefined
 
   constructor() {
     makeAutoObservable(this)
