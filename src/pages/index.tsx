@@ -18,11 +18,8 @@ export default function Home() {
         }}
       >
         <Typography variant='h4' component='h1' gutterBottom>
-          MUI v5 + Next.js with TypeScript example
+          НЮХАНИ БЕБРАЧЬКИ АБОБУС
         </Typography>
-        <Link href='/about' color='secondary'>
-          Go to the about page
-        </Link>
       </Box>
     </Container>
   )

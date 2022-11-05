@@ -1,8 +1,16 @@
-import { FC, ReactNode } from 'react'
+import { FC, useState } from 'react'
 import { styled } from '@mui/material/styles'
-import { Box, Paper, Typography, Avatar, IconButton } from '@mui/material'
+import {
+  Box,
+  Paper,
+  Typography,
+  Avatar,
+  IconButton,
+  Modal,
+} from '@mui/material'
 import EditIcon from '@mui/icons-material/Edit'
 import { Profile } from '../../types/Profile'
+import ChangePassModal from './ChangePassModal'
 
 const Item = styled(Paper)(() => ({
   backgroundColor: 'white',
@@ -10,7 +18,7 @@ const Item = styled(Paper)(() => ({
   color: 'black',
   boxShadow: '5',
   borderRadius: 12,
-  padding: '2%',
+  padding: '5%',
 }))
 
 interface MeProps {
@@ -18,6 +26,10 @@ interface MeProps {
 }
 
 const MeCards: FC<MeProps> = ({ profile }) => {
+  const [open, setOpen] = useState(false)
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
+
   return (
     <Box
       sx={{
@@ -30,7 +42,7 @@ const MeCards: FC<MeProps> = ({ profile }) => {
       <Item>
         <Box display='flex' justifyContent='space-between' sx={{ mb: '2%' }}>
           <Typography variant='h4'>Основная информация</Typography>
-          <IconButton>
+          <IconButton sx={{ display: 'none' }}>
             <EditIcon />
           </IconButton>
         </Box>
@@ -42,9 +54,9 @@ const MeCards: FC<MeProps> = ({ profile }) => {
           />
 
           <Box alignSelf={'center'}>
-            <Typography>{`${profile.lastname} ${profile.firstname} ${
-              profile.patronymic ? profile.patronymic : ''
-            }`}</Typography>
+            <Typography variant='h6'>{`${profile.lastname} ${
+              profile.firstname
+            } ${profile.patronymic ? profile.patronymic : ''}`}</Typography>
             <Typography>{`${profile.citizenship_uuid}, ${profile.city_uuid}`}</Typography>
             <Typography>{profile.gender ? profile.gender : ''}</Typography>
           </Box>
@@ -57,7 +69,7 @@ const MeCards: FC<MeProps> = ({ profile }) => {
       <Item>
         <Box display='flex' justifyContent='space-between' sx={{ mb: '2%' }}>
           <Typography variant='h4'>Компетенции</Typography>
-          <IconButton>
+          <IconButton sx={{ display: 'none' }}>
             <EditIcon />
           </IconButton>
         </Box>
@@ -86,20 +98,30 @@ const MeCards: FC<MeProps> = ({ profile }) => {
               {profile.company_inn ? profile.company_inn : 'Не указано'}
             </Typography>
           </Box>
+        </Box>
+      </Item>
+      <Item>
+        <Box display='flex' justifyContent='space-between' sx={{ mb: '2%' }}>
+          <Typography variant='h4'>Успехи</Typography>
+          <IconButton sx={{ display: 'none' }}>
+            <EditIcon />
+          </IconButton>
+        </Box>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
           <Box>
             <Typography variant='h6'>Навыки:</Typography>
             <Typography>{profile.skill}</Typography>
+          </Box>
+          <Box>
             <Typography variant='h6'>Достижения:</Typography>
             <Typography>{profile.achievement}</Typography>
-            <Typography variant='h6'>Изобретения:</Typography>
-            <Typography>{profile.patent}</Typography>
           </Box>
         </Box>
       </Item>
       <Item>
         <Box display='flex' justifyContent='space-between' sx={{ mb: '2%' }}>
           <Typography variant='h4'>Контакты</Typography>
-          <IconButton>
+          <IconButton sx={{ display: 'none' }}>
             <EditIcon />
           </IconButton>
         </Box>
@@ -118,12 +140,19 @@ const MeCards: FC<MeProps> = ({ profile }) => {
       <Item>
         <Box display='flex' justifyContent='space-between' sx={{ mb: '2%' }}>
           <Typography variant='h4'>Пароль</Typography>
-          <IconButton>
+          <IconButton onClick={handleOpen}>
             <EditIcon />
           </IconButton>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby='modal-modal-title'
+            aria-describedby='modal-modal-description'
+          >
+            <ChangePassModal />
+          </Modal>
         </Box>
-        <Typography variant='h6'>**************</Typography>
-        ???
+        <Typography variant='h6'>••••••••••••••••</Typography>
       </Item>
     </Box>
   )
