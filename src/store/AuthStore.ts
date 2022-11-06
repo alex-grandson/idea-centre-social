@@ -6,6 +6,7 @@ import { makeAutoObservable } from 'mobx'
 
 export default class AuthStore {
   user: LoginResponse | RegisterResonse | undefined = undefined
+  userUUID: string | undefined = undefined
 
   constructor() {
     makeAutoObservable(this)

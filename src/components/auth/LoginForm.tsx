@@ -1,11 +1,31 @@
 import { AxiosError, AxiosResponse } from 'axios'
 import { Box, Button, TextField } from '@mui/material'
 import { useEffect, useState } from 'react'
-
+import styled from '@emotion/styled'
 import AuthService from '../../api/AuthService'
 import { LoginRequest } from '../../types/auth/Login'
 import { loginValidation } from '../../validation/login'
 import { useFormik } from 'formik'
+
+const ModifiedTextField = styled(TextField)({
+  '& label.Mui-focused': {
+    color: '#202020',
+  },
+  '& .MuiInput-underline:after': {
+    borderBottomColor: '#202020',
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: 'red',
+    },
+    '&:hover fieldset': {
+      borderColor: '#202020',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: '#202020',
+    },
+  },
+})
 
 const LoginForm = () => {
   const [isError, setIsError] = useState(false)
@@ -41,7 +61,7 @@ const LoginForm = () => {
       }}
       onSubmit={formik.handleSubmit}
     >
-      <TextField
+      <ModifiedTextField
         type={'email'}
         label='Почта'
         id='email'
@@ -53,7 +73,7 @@ const LoginForm = () => {
         error={formik.touched.email && Boolean(formik.errors.email)}
         helperText={formik.touched.email && formik.errors.email}
       />
-      <TextField
+      <ModifiedTextField
         type={'password'}
         label='Пароль'
         id='password'
@@ -65,7 +85,14 @@ const LoginForm = () => {
         error={formik.touched.password && Boolean(formik.errors.password)}
         helperText={formik.touched.password && formik.errors.password}
       />
-      <Button type='submit' variant='contained'>
+      <Button
+        type='submit'
+        variant='contained'
+        sx={{
+          backgroundColor: '#38B2AC',
+          '&:hover': { backgroundColor: '#38B2AC' },
+        }}
+      >
         Вход
       </Button>
     </Box>

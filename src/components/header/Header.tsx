@@ -11,12 +11,14 @@ import {
   useScrollTrigger,
 } from '@mui/material'
 
-import { Context } from '../../pages/_app'
+// import { Context } from '../../pages/_app'
 import HeaderNavContent from './HeaderNavContent'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import { observer } from 'mobx-react-lite'
 import ProfileAvatar from './ProfileAvatar'
-import { useContext } from 'react'
+// import { useContext } from 'react'
+import { authStore } from '../../pages/_app'
+import Link from 'next/link'
 
 interface Props {
   window?: () => Window
@@ -57,7 +59,7 @@ function ScrollTop(props: Props) {
 }
 
 const Header = (props: Props) => {
-  const { authStore } = useContext(Context)
+  // const { authStore } = useContext(Context)
 
   return (
     <>
@@ -66,15 +68,31 @@ const Header = (props: Props) => {
         <Container maxWidth='xl'>
           <Toolbar disableGutters>
             <HeaderNavContent />
-            {authStore.user == undefined ? (
-              <ProfileAvatar />
-            ) : (
-              <ButtonGroup>
-                {/* TODO: выскакивание модалок с LoginForm и RegisterForm */}
-                <Button>Логин</Button>
-                <Button>Регистрация</Button>
-              </ButtonGroup>
-            )}
+
+            <Box
+              sx={{
+                minWidth: '138px',
+                display: 'flex',
+                justifyContent: 'right',
+              }}
+            >
+              {authStore.user == undefined ? (
+                <ProfileAvatar />
+              ) : (
+                <Link href={'/auth'}>
+                  <Button
+                    variant='outlined'
+                    sx={{
+                      color: '#38B2AC',
+                      borderColor: '#38B2AC',
+                      '&:hover': { borderColor: '#38B2AC' },
+                    }}
+                  >
+                    Авторизация
+                  </Button>
+                </Link>
+              )}
+            </Box>
           </Toolbar>
         </Container>
       </AppBar>

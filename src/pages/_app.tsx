@@ -18,35 +18,35 @@ interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache
 }
 
-interface State {
-  authStore: AuthStore
-  chatStore: ChatStore
-}
+// interface State {
+//   authStore: AuthStore
+//   chatStore: ChatStore
+// }
 
-const authStore = new AuthStore()
+export const authStore = new AuthStore()
 const chatStore = new ChatStore()
 
-export const Context = createContext<State>({
-  authStore,
-  chatStore,
-})
+// export const Context = createContext<State>({
+//   authStore,
+//   chatStore,
+// })
 
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
 
   return (
-    <Context.Provider value={{ authStore, chatStore }}>
-      <CacheProvider value={emotionCache}>
-        <Head>
-          <meta name='viewport' content='initial-scale=1, width=device-width' />
-        </Head>
-        <ThemeProvider theme={theme}>
-          <Header>
-            <Component {...pageProps} />
-          </Header>
-          <CssBaseline />
-        </ThemeProvider>
-      </CacheProvider>
-    </Context.Provider>
+    // <Context.Provider value={{ authStore, chatStore }}>
+    <CacheProvider value={emotionCache}>
+      <Head>
+        <meta name='viewport' content='initial-scale=1, width=device-width' />
+      </Head>
+      <ThemeProvider theme={theme}>
+        <Header>
+          <Component {...pageProps} />
+        </Header>
+        <CssBaseline />
+      </ThemeProvider>
+    </CacheProvider>
+    // </Context.Provider>
   )
 }

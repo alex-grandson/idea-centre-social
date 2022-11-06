@@ -30,7 +30,6 @@ const HeaderNavContent = () => {
         width: '100%',
         display: 'flex',
         flexDirection: { xs: 'row-reverse', md: 'row' },
-        // gap: '30vw',
       }}
     >
       <Link href='/' style={{ textDecoration: 'none' }}>

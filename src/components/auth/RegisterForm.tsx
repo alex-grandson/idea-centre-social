@@ -1,11 +1,31 @@
 import { AxiosError, AxiosResponse } from 'axios'
 import { Box, Button, TextField } from '@mui/material'
 import { useEffect, useState } from 'react'
-
+import styled from '@emotion/styled'
 import AuthService from '../../api/AuthService'
 import { RegisterRequest } from '../../types/auth/Register'
 import { registerValidation } from '../../validation/register'
 import { useFormik } from 'formik'
+
+const ModifiedTextField = styled(TextField)({
+  '& label.Mui-focused': {
+    color: '#202020',
+  },
+  '& .MuiInput-underline:after': {
+    borderBottomColor: '#202020',
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: 'red',
+    },
+    '&:hover fieldset': {
+      borderColor: '#202020',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: '#202020',
+    },
+  },
+})
 
 const RegisterForm = () => {
   const [isError, setIsError] = useState(false)
@@ -41,7 +61,7 @@ const RegisterForm = () => {
           p: 4,
         }}
       >
-        <TextField
+        <ModifiedTextField
           type={'email'}
           label='Почта'
           id='email'
@@ -53,7 +73,7 @@ const RegisterForm = () => {
           error={formik.touched.email && Boolean(formik.errors.email)}
           helperText={formik.touched.email && formik.errors.email}
         />
-        <TextField
+        <ModifiedTextField
           type={'password'}
           label='Пароль'
           id='password'
@@ -65,7 +85,7 @@ const RegisterForm = () => {
           error={formik.touched.password && Boolean(formik.errors.password)}
           helperText={formik.touched.password && formik.errors.password}
         />
-        <TextField
+        <ModifiedTextField
           type={'password'}
           name={'passwordConfirmation'}
           id={'passwordConfirmation'}
@@ -83,7 +103,14 @@ const RegisterForm = () => {
             formik.errors.passwordConfirmation
           }
         />
-        <Button type='submit' variant='contained'>
+        <Button
+          type='submit'
+          variant='contained'
+          sx={{
+            backgroundColor: '#38B2AC',
+            '&:hover': { backgroundColor: '#38B2AC' },
+          }}
+        >
           Регистрация
         </Button>
       </Box>

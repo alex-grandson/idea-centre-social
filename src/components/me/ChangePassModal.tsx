@@ -5,7 +5,7 @@ import { passwordValidation } from '../../validation/password'
 import { useFormik } from 'formik'
 import { PasswordChangeRequest } from '../../types/PasswordChangeRequest'
 
-const CssTextField = styled(TextField)({
+const ModifiedTextField = styled(TextField)({
   '& label.Mui-focused': {
     color: '#202020',
   },
@@ -33,7 +33,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 600,
+  width: 400,
   bgcolor: 'background.paper',
   boxShadow: 3,
   p: 4,
@@ -50,6 +50,7 @@ const ChangePassModal: FC = () => {
     } as PasswordChangeRequest & { newPasswordConfirmation: string },
     onSubmit: (values) => {
       console.debug(values)
+      // прикрутить эндпоинт
       // AuthService.register(values)
       //   .then((response: AxiosResponse) => {
       //     if (response.status == 200) {
@@ -67,7 +68,7 @@ const ChangePassModal: FC = () => {
     <form onSubmit={formik.handleSubmit}>
       <Box sx={style}>
         <Typography variant='h4'>Изменение пароля</Typography>
-        <CssTextField
+        <ModifiedTextField
           type={'password'}
           variant='standard'
           label='Старый пароль'
@@ -81,7 +82,7 @@ const ChangePassModal: FC = () => {
           }
           helperText={formik.touched.oldPassword && formik.errors.oldPassword}
         />
-        <CssTextField
+        <ModifiedTextField
           type={'password'}
           variant='standard'
           label='Новый пароль'
@@ -95,7 +96,7 @@ const ChangePassModal: FC = () => {
           }
           helperText={formik.touched.newPassword && formik.errors.newPassword}
         />
-        <CssTextField
+        <ModifiedTextField
           type={'password'}
           variant='standard'
           label='Подтверждение пароля'
@@ -116,7 +117,10 @@ const ChangePassModal: FC = () => {
         <Button
           type='submit'
           variant='contained'
-          sx={{ backgroundColor: '#3182CE' }}
+          sx={{
+            backgroundColor: '#38B2AC',
+            '&:hover': { backgroundColor: '#38B2AC' },
+          }}
         >
           Подтвердить
         </Button>
