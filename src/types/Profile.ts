@@ -1,8 +1,3 @@
-type Company = {
-  name: string
-  inn: string
-}
-
 type Education = {
   university: string
   eduspeciality: string
@@ -15,27 +10,13 @@ export type Profile = {
   firstname: string
   lastname: string
   experience?: number
-  achievement: string
-  patronymic?: string
+  patronymic?: string // это картинка ))))
   country?: string
-  citezenship?: string
   city?: string
+  citizenship?: string
   gender?: string
   phone?: string
-  employment?: string
-  imageURL?: string
-  team?: string
   role?: string
-  skill?: string
-  company?: Company
+  specialization?: string
   education?: Education
 }
-
-//Образование
-//Опыт (число)
-//Профессия
-//Навыки
-//Достижения
-//Компания (+ роль)
-//Изобретения
-//ИНН компании

@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import ContentContainer from '../../components/global/ContentContainer'
 import ProjectCard from '../../components/project/ProjectCard'
-import Grid from '@mui/material/Grid'
+import { Grid, FormGroup, FormControlLabel, Switch, Paper } from '@mui/material'
 import useProjectsFetch from '../../hooks/useProjectsFetch'
 import useInfiniteScroll from '../../hooks/useInfiniteScroll'
 
@@ -11,6 +11,17 @@ const ProjectPage: FC = () => {
 
   return (
     <>
+      <Paper sx={{ display: 'block', m: '0 auto', width: '800px' }}>
+        <FormGroup sx={{ mb: '30px', width: '100%' }}>
+          <FormControlLabel
+            sx={{ m: '0 auto' }}
+            control={
+              <Switch size='medium' color='default' sx={{ m: '0 auto' }} />
+            }
+            label='ЗАПУСТИТЬ ТУРБО ПОИСК'
+          />
+        </FormGroup>
+      </Paper>
       <ContentContainer>
         <Grid container spacing={3} columns={{ xs: 6, md: 12 }}>
           {projects.map((item, index) => (

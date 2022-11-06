@@ -91,13 +91,13 @@
       "presentation_link": "https://vk.com/x1kk4",
       "creator": {
         "uuid": "1",
-        "firstname": "Greg",
-        "lastname": "Penisov",
+        "firstname": "Maks",
+        "lastname": "Doter",
         "image": "https://avatars.mds.yandex.net/i?id=ae32873ae4fe322ed42c91f20c423fd46b090931-4033630-images-thumbs&n=13"
       },
       "date": "01.02.2022",
       "slots": [
-        { "category": "Бебранюх" },
+        { "category": "Инженер" },
         { "category": "Механик" },
         { "category": "Водитель" },
         { "category": "Таксист" }
@@ -606,40 +606,179 @@
   ],
   "profiles": [
     {
-      "uuid": "",
-      "email": "",
-      "firstname": "",
-      "lastname": "",
-      "patronymic": "",
-      "country_code": "",
-      "role": ""
+      "UUID": "fa044ee2-cebd-484d-9697-9f8b25646188",
+      "email": "Grigory.Valevin@gmail.com",
+      "firstname": "Григорий",
+      "lastname": "Валевин",
+      "experience": 10,
+      "achievement": "5000 часов в доте",
+      "patronymic": "Александрович",
+      "country": "Россия",
+      "citizenship": "Россия",
+      "city": "Санкт-Петербург",
+      "gender": "Мужчина",
+      "phone": "89996688572",
+      "employment": "Самозанятый",
+      "imageURL": "https://sun9-78.userapi.com/impg/TzT4iG3pCUaVzsOMntof9fptQClkHrAY1czPSg/mQqfexGEaGo.jpg?size=604x589&quality=96&sign=2df7c6a2e7f1f70e9c8a57a76b6bb652&type=album",
+      "team": "NaVi",
+      "role": "admin",
+      "skill": "Потный задр ебашусь на финдах идите сюда пидарасы ",
+      "company": {
+        "name": "ООО МалыеХуйки",
+        "inn": "123-234-51242-234"
+      },
+      "education": {
+        "university": "Университет ИТМО",
+        "eduspeciality": "Лазерные технологии и плотный занюх бебруса",
+        "graduationYear": 2025
+      }
     },
     {
-      "uuid": "",
-      "email": "",
-      "firstname": "",
-      "lastname": "",
-      "patronymic": "",
-      "country_code": "",
-      "role": ""
+      "UUID": "sdfqsd-cebd-484d-9697-9f8b25646188",
+      "email": "bebra.bebra@mail.ru",
+      "firstname": "Томас",
+      "lastname": "Шелби",
+      "imageURL": "https://citaty.info/files/characters/83534.jpg"
     },
     {
-      "uuid": "",
-      "email": "",
-      "firstname": "",
-      "lastname": "",
-      "patronymic": "",
-      "country_code": "",
-      "role": ""
+      "UUID": "2",
+      "email": "bebra.bebra@mail.ru",
+      "firstname": "Леха",
+      "lastname": "Внук",
+      "imageURL": "https://citaty.info/files/characters/83534.jpg"
     },
     {
-      "uuid": "",
-      "email": "",
-      "firstname": "",
-      "lastname": "",
-      "patronymic": "",
-      "country_code": "",
-      "role": ""
+      "UUID": "3",
+      "email": "bebra.bebra@mail.ru",
+      "firstname": "Томас",
+      "lastname": "Бебри",
+      "imageURL": "https://citaty.info/files/characters/83534.jpg"
+    },
+    {
+      "UUID": "4",
+      "email": "bebra.bebra@mail.ru",
+      "firstname": "Глад",
+      "lastname": "Валакас",
+      "imageURL": "https://citaty.info/files/characters/83534.jpg"
+    },
+    {
+      "UUID": "5",
+      "email": "bebra.bebra@mail.ru",
+      "firstname": "Виталий",
+      "lastname": "Цаль",
+      "imageURL": "https://citaty.info/files/characters/83534.jpg"
+    },
+    {
+      "UUID": "6",
+      "email": "bebra.bebra@mail.ru",
+      "firstname": "Рома",
+      "lastname": "Грек",
+      "imageURL": "https://citaty.info/files/characters/83534.jpg"
+    },
+    {
+      "UUID": "7",
+      "email": "bebra.bebra@mail.ru",
+      "firstname": "Павел",
+      "lastname": "Датабасе",
+      "imageURL": "https://citaty.info/files/characters/83534.jpg"
+    },
+    {
+      "UUID": "8",
+      "email": "bebra.bebra@mail.ru",
+      "firstname": "Жентос",
+      "lastname": "Пивандопала",
+      "imageURL": "https://citaty.info/files/characters/83534.jpg"
+    },
+    {
+      "UUID": "9",
+      "email": "bebra.bebra@mail.ru",
+      "firstname": "Какдела",
+      "lastname": "Нормальнович",
+      "imageURL": "https://citaty.info/files/characters/83534.jpg"
+    },
+    {
+      "UUID": "10",
+      "email": "bebra.bebra@mail.ru",
+      "firstname": "Валера",
+      "lastname": "Гладиатор",
+      "imageURL": "https://citaty.info/files/characters/83534.jpg"
+    },
+    {
+      "UUID": "12",
+      "email": "bebra.bebra@mail.ru",
+      "firstname": "Петя",
+      "lastname": "Компьютерщик",
+      "imageURL": "https://citaty.info/files/characters/83534.jpg"
+    },
+    {
+      "UUID": "13",
+      "email": "bebra.bebra@mail.ru",
+      "firstname": "Александр",
+      "lastname": "Левин",
+      "imageURL": "https://citaty.info/files/characters/83534.jpg"
+    },
+    {
+      "UUID": "14",
+      "email": "bebra.bebra@mail.ru",
+      "firstname": "Алексей",
+      "lastname": "Березин",
+      "imageURL": "https://citaty.info/files/characters/83534.jpg"
+    },
+    {
+      "UUID": "15",
+      "email": "bebra.bebra@mail.ru",
+      "firstname": "Жмых",
+      "lastname": "Петров",
+      "imageURL": "https://citaty.info/files/characters/83534.jpg"
+    },
+    {
+      "UUID": "16",
+      "email": "bebra.bebra@mail.ru",
+      "firstname": "Сашка",
+      "lastname": "Дурачок",
+      "imageURL": "https://citaty.info/files/characters/83534.jpg"
+    },
+    {
+      "UUID": "17",
+      "email": "bebra.bebra@mail.ru",
+      "firstname": "Матич",
+      "lastname": "Легенда",
+      "imageURL": "https://citaty.info/files/characters/83534.jpg"
+    },
+    {
+      "UUID": "18",
+      "email": "bebra.bebra@mail.ru",
+      "firstname": "Скалли",
+      "lastname": "Милано",
+      "imageURL": "https://citaty.info/files/characters/83534.jpg"
+    },
+    {
+      "UUID": "19",
+      "email": "bebra.bebra@mail.ru",
+      "firstname": "Илья",
+      "lastname": "Коробкин",
+      "imageURL": "https://citaty.info/files/characters/83534.jpg"
+    },
+    {
+      "UUID": "20",
+      "email": "bebra.bebra@mail.ru",
+      "firstname": "Роман",
+      "lastname": "Кушнарев",
+      "imageURL": "https://citaty.info/files/characters/83534.jpg"
+    },
+    {
+      "UUID": "21",
+      "email": "bebra.bebra@mail.ru",
+      "firstname": "Владимир",
+      "lastname": "Залупов",
+      "imageURL": "https://citaty.info/files/characters/83534.jpg"
+    },
+    {
+      "UUID": "22",
+      "email": "bebra.bebra@mail.ru",
+      "firstname": "Джерреми",
+      "lastname": "Шелби",
+      "imageURL": "https://citaty.info/files/characters/83534.jpg"
     }
   ]
 }

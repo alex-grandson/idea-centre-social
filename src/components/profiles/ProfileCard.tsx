@@ -7,19 +7,18 @@ import { CardActionArea } from '@mui/material'
 import Avatar from '@mui/material/Avatar'
 import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
-import ProjectModalContent from './ProjectModalContent'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
 import CommentIcon from '@mui/icons-material/Comment'
 import IconButton from '@mui/material/IconButton'
-import { Project } from '../../types/Project'
+import { Profile } from '../../types/Profile'
 
-interface ProjectCardProps {
-  project: Project
+interface ProfileCardProps {
+  profile: Profile
 }
 
-const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
+const ProfileCard: FC<ProfileCardProps> = ({ profile }) => {
   const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
@@ -36,23 +35,23 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
         }}
       >
         <CardActionArea sx={{ height: '100%' }} onClick={() => handleOpen()}>
-          <CardMedia
+          {/* <CardMedia
             sx={{ height: '200px' }}
             component='img'
-            image={project.image}
-            alt={project.name}
-          />
+            image={profile.image}
+            alt={profile.name}
+          /> */}
           <CardContent>
             <Typography
               sx={{ fontSize: 14 }}
               color='text.secondary'
               gutterBottom
             >
-              {project.date}
+              {profile.email}
             </Typography>
-            <Typography variant='h5' component='div'>
-              {project.name}
-            </Typography>
+            {/* <Typography variant='h5' component='div'>
+              {profile.name}
+            </Typography> */}
             <Box
               sx={{
                 display: 'flex',
@@ -61,30 +60,11 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
                 height: '50px',
               }}
             >
-              <Avatar
-                alt={project.creator.firstname}
-                src={project.creator.image}
-              />
+              <Avatar alt={profile.firstname} src={profile.imageURL} />
               <Typography sx={{ alignSelf: 'center' }}>
-                {`${project.creator.firstname} ${project.creator.lastname}`}
+                {`${profile.firstname} ${profile.lastname}`}
               </Typography>
             </Box>
-            <List
-              sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
-            >
-              {project.slots.map((value) => (
-                <ListItem
-                  disableGutters
-                  secondaryAction={
-                    <IconButton aria-label='comment'>
-                      <CommentIcon />
-                    </IconButton>
-                  }
-                >
-                  <ListItemText primary={`${value.category}`} />
-                </ListItem>
-              ))}
-            </List>
           </CardContent>
         </CardActionArea>
       </Card>
@@ -95,10 +75,10 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
         aria-describedby='modal-modal-description'
         sx={{ overflow: 'scroll' }}
       >
-        <ProjectModalContent project={project} />
+        <Box>BEBRA</Box>
       </Modal>
     </Box>
   )
 }
 
-export default ProjectCard
+export default ProfileCard

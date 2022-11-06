@@ -5,11 +5,11 @@ type Slot = {
 }
 
 export type Project = {
-  uuid: string
+  UUID: string
   name: string
   description: string
-  image: string
-  presentation_link: string
+  imageURL: string
+  presentationLink?: string
   creator: Profile
   date: string
   slots: Slot[]
